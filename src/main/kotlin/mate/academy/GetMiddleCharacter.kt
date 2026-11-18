@@ -5,13 +5,10 @@ package mate.academy
 
 fun getMiddleString(originalString: String): String {
     if (originalString.isEmpty()) return ""
-    val result = StringBuilder()
-    if (originalString.length % 2 == 0) {
-        result.append(originalString[originalString.length / 2 - 1])
-        result.append(originalString[originalString.length / 2])
-        return result.toString()
+    val middle = originalString.length / 2
+    return if (originalString.length % 2 == 0) {
+        "${originalString[middle - 1]}${originalString[middle]}"
     } else {
-        result.append(originalString[(originalString.length / 2)])
-        return result.toString()
+        "${originalString[middle]}"
     }
 }
